@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost:27017/e-commerce-demo")
+  .connect(
+    "mongodb+srv://mantu000:mantu000@cluster0.eewb1ul.mongodb.net/e-commerce-demo?retryWrites=true&w=majority&appName=Cluster0"
+  )
   .then(() => {
     console.log("database connected sucessfully....");
   })
