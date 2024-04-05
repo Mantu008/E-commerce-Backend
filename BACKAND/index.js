@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const cors = require("cors");
 require("./config");
 const user = require("./users");
@@ -148,6 +149,6 @@ function verifyTocken(req, resp, next) {
   }
 }
 
-app.listen(3000, () =>
+app.listen(process.env.PORT, () =>
   console.log("Server is running on Port [ http://localhost:3000 ]")
 );
