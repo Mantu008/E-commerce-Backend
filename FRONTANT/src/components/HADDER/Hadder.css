@@ -1,0 +1,45 @@
+.main {
+  background-color: aliceblue;
+  border: 1px solid gray;
+}
+
+.mid {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.nav-link {
+  color: red;
+}
+
+.imge {
+  height: 50px;
+  width: 50px;
+}
+
+.logo {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.sname {
+  margin-top: 20px;
+  font-size: larger;
+  font-weight: 600;
+  color: rgb(240, 156, 29);
+}
+
+.item {
+  gap: 40px;
+}
+
+.bag-item-count {
+  color: red;
+  margin-left: 1px;
+}
