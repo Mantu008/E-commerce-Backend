@@ -15,13 +15,16 @@ export default function Login() {
     if (!email || !password) {
       alert("Plese Fill all the input field");
     } else {
-      let data = await fetch("http://localhost:3000/login", {
-        method: "post",
-        body: JSON.stringify({ email, password }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let data = await fetch(
+        "https://e-commerce-backend-qljw.vercel.app/login",
+        {
+          method: "post",
+          body: JSON.stringify({ email, password }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       data = await data.json();
       if (!data.auth) {
         alert("Email Id Passwod is not Match");
