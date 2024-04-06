@@ -16,8 +16,13 @@ app.get("/", (req, resp) => {
   resp.send("i am mantu");
 });
 
-app.get("/go", (req, resp) => {
-  resp.send("kya hal hai ");
+app.get("/go", async (req, resp) => {
+  const data = await products.find();
+  if (!data) {
+    resp.send(JSON.stringify({ resp: false }));
+  } else {
+    resp.send(data);
+  }
 });
 
 app.get("/notgo", (req, resp) => {
