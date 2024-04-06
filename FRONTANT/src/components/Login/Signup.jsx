@@ -17,21 +17,27 @@ const Signup = () => {
     if (!name || !email || !password) {
       alert("Plese Fill all the input field");
     } else {
-      let data = await fetch("http://localhost:3000/login", {
-        method: "post",
-        body: JSON.stringify({ name, email, password }),
-        headers: { "Content-Type": "application/json" },
-      });
+      let data = await fetch(
+        "https://e-commerce-backend-qljw.vercel.app/login",
+        {
+          method: "post",
+          body: JSON.stringify({ name, email, password }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       data = await data.json();
 
       if (data.data === false) {
-        let result = await fetch("http://localhost:3000/register", {
-          method: "post",
-          body: JSON.stringify({ name, email, password }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        let result = await fetch(
+          "https://e-commerce-backend-qljw.vercel.app/register",
+          {
+            method: "post",
+            body: JSON.stringify({ name, email, password }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         result = await result.json();
         console.log(result);
         alert("Signin Sucessfull.....");

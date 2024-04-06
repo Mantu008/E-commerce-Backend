@@ -24,7 +24,7 @@ const UpdateProducts = () => {
 
   const getProductDetail = async () => {
     let data = await fetch(
-      `http://localhost:3000/getUpdateproduct/${params.id}`,
+      `https://e-commerce-backend-qljw.vercel.app/getUpdateproduct/${params.id}`,
       {
         headers: {
           authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
@@ -46,7 +46,7 @@ const UpdateProducts = () => {
     } else {
       console.log(name, price, category, company, userId);
       let result = await fetch(
-        `http://localhost:3000/update-product/${params.id}`,
+        `https://e-commerce-backend-qljw.vercel.app/update-product/${params.id}`,
         {
           method: "put",
           body: JSON.stringify({ name, price, category, userId, company }),

@@ -10,14 +10,17 @@ const Products = () => {
   }, []);
 
   const getProducts = async () => {
-    let data = await fetch("http://localhost:3000/get-products", {
-      method: "post",
-      body: JSON.stringify({ userId }),
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    });
+    let data = await fetch(
+      "https://e-commerce-backend-qljw.vercel.app/get-products",
+      {
+        method: "post",
+        body: JSON.stringify({ userId }),
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      }
+    );
     data = await data.json();
     if (products.resp != false) {
       setProducts(data);
@@ -25,13 +28,16 @@ const Products = () => {
   };
 
   const deleteProduct = async (id) => {
-    let data = await fetch(`http://localhost:3000/delete-product/${id}`, {
-      method: "Delete",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    });
+    let data = await fetch(
+      `https://e-commerce-backend-qljw.vercel.app/delete-product/${id}`,
+      {
+        method: "Delete",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      }
+    );
     data = await data.json();
     if (data) {
       alert("product is deleted");
@@ -49,7 +55,7 @@ const Products = () => {
       getProducts();
     } else {
       let data = await fetch(
-        `http://localhost:3000/search/${key}?userId=${userId}`,
+        `https://e-commerce-backend-qljw.vercel.app/search/${key}?userId=${userId}`,
         {
           headers: {
             "Content-Type": "application/json",
