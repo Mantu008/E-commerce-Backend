@@ -12,6 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, resp) => {
+  resp.send("i am mantu");
+});
+
 //routes for userns collection which handle login-logout
 
 //this is for login
@@ -149,6 +153,6 @@ function verifyTocken(req, resp, next) {
   }
 }
 
-app.listen(process.env.Port || 3000, () =>
+app.listen(process.env.Port, () =>
   console.log("Server is running on Port [ http://localhost:3000 ]")
 );
