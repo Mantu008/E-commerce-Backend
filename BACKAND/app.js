@@ -149,6 +149,6 @@ function verifyTocken(req, resp, next) {
   }
 }
 
-app.listen(3000, () =>
+app.listen(process.env.Port || 3000, () =>
   console.log("Server is running on Port [ http://localhost:3000 ]")
 );

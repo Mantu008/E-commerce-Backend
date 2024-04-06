@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 mongoose
-  .connect("mongodb://localhost:27017/e-commerce-demo")
+  .connect(process.env.MONGU_URL)
   .then(() => {
     console.log("database connected sucessfully....");
   })
