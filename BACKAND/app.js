@@ -16,6 +16,14 @@ app.get("/", (req, resp) => {
   resp.send("i am mantu");
 });
 
+app.get("/go", (req, resp) => {
+  resp.send("kya hal hai ");
+});
+
+app.get("/notgo", (req, resp) => {
+  resp.send("kya hal nahi hai bhai");
+});
+
 //routes for userns collection which handle login-logout
 
 //this is for login
