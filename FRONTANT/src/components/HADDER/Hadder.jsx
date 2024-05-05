@@ -12,8 +12,8 @@ const Hadder = () => {
     if (localStorage.getItem("user")) {
       localStorage.removeItem("user");
       localStorage.removeItem("token");
-      alert("User Logged Out..");
       navigate("/");
+      alert("User Logged Out..");
     }
   };
 
