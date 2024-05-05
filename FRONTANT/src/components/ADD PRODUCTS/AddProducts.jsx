@@ -25,14 +25,19 @@ const AddProducts = () => {
     if (!name || !price || !category || !company || !userId) {
       setError(true);
     } else {
-      let result = await fetch("http://localhost:3000/add-product", {
-        method: "post",
-        body: JSON.stringify({ name, price, category, userId, company }),
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-        },
-      });
+      let result = await fetch(
+        "https://e-commerce-backend-qljw.vercel.app/add-product",
+        {
+          method: "post",
+          body: JSON.stringify({ name, price, category, userId, company }),
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `bearer ${JSON.parse(
+              localStorage.getItem("token")
+            )}`,
+          },
+        }
+      );
       result = await result.json();
       alert("Item add Sucessfull.....");
       navigate("/products");
