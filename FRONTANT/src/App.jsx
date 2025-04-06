@@ -11,12 +11,15 @@ import Footer from "./components/Fotter/Footer";
 import Signup from "./components/Login/Signup";
 import PrivateComponent from "./components/PrivateComponent/PrivateComponent";
 
-function App() {
+const App = () => {
   return (
-    <div className="box">
+    <div className="flex flex-col min-h-screen">
       <Hadder />
-      <div className="content">
+
+      {/* Main Content */}
+      <main className="flex-1 pt-16 pb-10 bg-gray-50 px-4">
         <Routes>
+          {/* Protected Routes */}
           <Route element={<PrivateComponent />}>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
@@ -24,13 +27,15 @@ function App() {
             <Route path="/updateproduct/:id" element={<UpdateProducts />} />
             <Route path="/profile" element={<Profile />} />
           </Route>
+          {/* Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
-      </div>
+      </main>
+
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
